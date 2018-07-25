@@ -6,12 +6,13 @@
 /*   By: xlim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 09:33:16 by xlim              #+#    #+#             */
-/*   Updated: 2018/07/18 16:15:16 by xlim             ###   ########.fr       */
+/*   Updated: 2018/07/25 10:11:24 by xlim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
 
