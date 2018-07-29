@@ -6,7 +6,7 @@
 #    By: xlim <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/11 11:32:41 by xlim              #+#    #+#              #
-#    Updated: 2018/07/18 16:15:37 by xlim             ###   ########.fr        #
+#    Updated: 2018/07/29 15:10:31 by xlim             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,6 +79,8 @@ SRCS = ft_putchar.c \
 		 ft_strtoupper.c \
 		 ft_mocksb.c
 
+DIR = libc-ft/*.c additional-ft/*.c bonus-ft/*.c extra-ft/*.c
+
 OBJ = $(SRCS:%.c=%.o)
 
 all: $(NAME)
@@ -86,8 +88,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-$(OBJ): $(SRCS)
-	gcc $(FLAGS) $(SRCS)
+$(OBJ): $(DIR)
+	gcc $(FLAGS) $(DIR)
 
 clean:
 	rm -f $(OBJ)
