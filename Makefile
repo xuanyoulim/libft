@@ -6,25 +6,29 @@
 #    By: xlim <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/11 11:32:41 by xlim              #+#    #+#              #
-#    Updated: 2018/08/15 10:04:20 by xlim             ###   ########.fr        #
+#    Updated: 2018/08/18 17:35:35 by xlim             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-FLAGS = -Wall -Werror -Wextra -c -I.
+FLAGS = -Wall -Werror -Wextra -c -I includes/
 
-DIR = libc-ft/*.c additional-ft/*.c lst-ft/*.c extra-ft/*.c
+SRCSDIR = srcs
 
-OBJ = $(SRCS:%.c=%.o)
+OBJDIR = obj
+
+SRCS = $(wildcard $(SRCSDIR)/*/*.c)
+
+OBJ = $(patsubst %.c, %.o, $(notdir $(SRCS)))
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-$(OBJ): $(DIR)
-	gcc $(FLAGS) $(DIR)
+$(OBJ): $(SRCS)
+	gcc $(FLAGS) $(SRCS)
 
 clean:
 	rm -f $(OBJ)
